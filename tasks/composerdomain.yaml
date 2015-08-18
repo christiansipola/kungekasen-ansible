@@ -19,3 +19,5 @@
   command: a2ensite {{ domain }}
   notify:
     - restart apache2
+  args:
+    creates: /etc/apache2/sites-enabled/{{ domain }}.conf
