@@ -1,0 +1,44 @@
+---
+- hosts: kungekasen
+  sudo: yes
+  tasks:
+    - name: install packages
+      apt: name={{ item}} update_cache=yes state=latest
+      with_items:
+        - apache2
+        - git
+        - libapache2-mod-php5
+        - ffmpeg
+    - name: enabled mod_rewrite
+      apache2_module: name=rewrite state=present
+      notify:
+        - restart apache2
+    - name: enabled php in apache2
+      command: a2enmod php5
+      notify:
+        - restart apache2
+    - name: ssh_known_hosts
+      copy: src=files/ssh_known_hosts dest=/etc/ssh/
+    - name: install composer
+      shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+      args:
+        creates: /usr/local/bin/composer
+    - include: tasks/composerdomain.yaml
+               domain=brollop.kungekasen.se
+               name=kungekasen
+    - include: tasks/composerdomain.yaml
+               domain=podcast.kungekasen.se
+               name=podcastFeed
+    ## monday 1, tuesday 2, wednesday 3 thursday 4, friday 5, saturday 6, sunday 0
+    - cron: name="p3popular part 2 måndag till torsdag" minute="0" hour="2" weekday="2-5"
+            user=www-data
+            job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 2 >> /tmp/log 2>> /tmp/log2"
+    - cron: name="p3popular fredag" minute="0" hour="2" weekday="6"
+            user=www-data
+            job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
+    - cron: name="p3popular följer pengarna" minute="0" hour="2" weekday="3"
+            user=www-data
+            job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted

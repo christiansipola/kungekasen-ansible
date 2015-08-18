@@ -1,0 +1,363 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"relo",
+				"reload_commands"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "brollop.kungekasen.se.conf",
+			"settings":
+			{
+				"buffer_size": 402,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/AsciiDoc/asciidoc.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Heading 0 (one-liner)"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 470.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/zippo/git/kungekasen-ansible/apache.yml",
+		"/Users/zippo/git/kungekasen-ansible/inventory",
+		"/Volumes/Passwords/ÖvrigaLösenord.md",
+		"/Volumes/Christian Sipola/rsync.md",
+		"/Users/zippo/Documents/Lathund/Git.asc",
+		"/Users/zippo/git/puppet/Vagrantfile",
+		"/Users/zippo/Downloads/loneData-1505.xml",
+		"/Users/zippo/Documents/Untitled.txt",
+		"/Users/zippo/Dropbox (Kaustik AB)/Kaustik/9 Övrigt/Lokaler/Lagerhuset/unifyNoder.md",
+		"/Users/zippo/Todo/sublimehints.asc",
+		"/Users/zippo/Documents/Lathund/phpstorm_settings.asc",
+		"/Users/zippo/git/omsorg24.se/config/deploy.rb",
+		"/Volumes/Passwords/Aiai.se_lösenord.md",
+		"/Users/zippo/Todo/todoAll.asc",
+		"/Users/zippo/Downloads/loneData-1504.tlu",
+		"/Users/zippo/Downloads/loneData-1403(1).tlu",
+		"/Users/zippo/Downloads/loneData-1504.tlu.webloc",
+		"/Users/zippo/Documents/Aiai/Möten/2015-05-18-fördelningansvar.md",
+		"/Users/zippo/Documents/Aiai/David/2015-05-XX-lindahl.md",
+		"/Users/zippo/Downloads/loneData-1503.pax",
+		"/Users/zippo/Documents/Aiai/David/2015-04-21-lindahl.md",
+		"/Users/zippo/Downloads/tmp/Line.js",
+		"/Users/zippo/Downloads/tmp/exempel.php",
+		"/Users/zippo/Downloads/tmp/ConnectionStorage.js",
+		"/Users/zippo/Downloads/tmp/Connection.js",
+		"/Volumes/Passwords/viktor_lenovo.md",
+		"/Users/zippo/Documents/Aiai/Konferenser/2014-11.novemberCampTalksNotes.md",
+		"/Users/zippo/Documents/Aiai/Konferenser/2014-11.novemberCampTalksEvalutaion.md",
+		"/Volumes/Passwords/aiai_users.md",
+		"/Users/zippo/Documents/Aiai/David/2015-03-31-möte-stockholm-inför",
+		"/Users/zippo/Downloads/789346867/IntermediateCA.crt",
+		"/Users/zippo/Todo/todoDelegate.asc",
+		"/Volumes/Passwords/Driftberedskap.md",
+		"/Users/zippo/Downloads/loneData-1502.pax",
+		"/Users/zippo/git/aiai.se/config/deploy.rb",
+		"/Users/zippo/git/aiai.se/Capfile",
+		"/Users/zippo/git/omsorg24.se/Capfile",
+		"/Users/zippo/youtube/download.sh",
+		"/Users/zippo/git/puppet/download.sh",
+		"/Users/zippo/git/aiai.se/om-aiai.php",
+		"/Volumes/HTDOCS/htdocs/Textfiles/todo/rutiner.asc",
+		"/Users/zippo/Documents/Manualer/Projektor/projektorinfo.md",
+		"/Users/zippo/Sites/aiai/scripts/sandbox.txt",
+		"/Users/zippo/Desktop/Fakturaadress_kaustik_ab_LIN.txt",
+		"/Users/zippo/Todo/todoVagrant.asc",
+		"/Users/zippo/Documents/Aiai/Möten/2015-01-28-informellt-styrelsemöte.asc",
+		"/Users/zippo/Documents/linux/ssl.md",
+		"/Users/zippo/Sites/aiai/aiai/php/Models/LoneDataValue.php",
+		"/Users/zippo/Documents/Aiai/Möten/2014-11-18-ledningsgrupp-strategidag.asc",
+		"/Users/zippo/Downloads/strategi.asc",
+		"/Users/zippo/Documents/Aiai/Möten/2014-12-17- Satish-Sen-nr2.asc",
+		"/Users/zippo/Dropbox/Älskling/Julklappar2014.txt",
+		"/Users/zippo/new.xml",
+		"/Users/zippo/Downloads/loneData-1410.xml",
+		"/Users/zippo/log.txt",
+		"/Users/zippo/Dropbox/Båt X-99/X-99 Bonk/Specifikationer.txt",
+		"/Users/zippo/Documents/Aiai/blandat/tf_vd_rutin.md",
+		"/Users/zippo/Documents/Apple/apple batteri nivåer.md",
+		"/Users/zippo/Documents/Aiai/Möten/2014-10--17- GT-Satish-Sen.asc",
+		"/Users/zippo/Dropbox/Dokument/PLUS-2014.asc",
+		"/Users/zippo/Downloads/protokoll.md",
+		"/Users/zippo/Documents/Aiai/Möten/2014-09-25-konferens-kvalite.asc",
+		"/Volumes/Passwords/WebhotellLösenord.md",
+		"/Users/zippo/Sites/aiai/php/init/location.inc.php",
+		"/Volumes/Passwords/AiaiDebug.md",
+		"/Users/zippo/Dropbox/Älskling/Bröllop/Inbjudan/resa.txt",
+		"/Users/zippo/Downloads/loneData-1406.pax",
+		"/Users/zippo/crontab.www1",
+		"/Users/zippo/crontab.new",
+		"/Users/zippo/Sites/aiai/log/junit.xml",
+		"/Users/zippo/Sites/aiai/log/junit-table.xsl",
+		"/Users/zippo/Sites/aiai/log/junit.xsl",
+		"/Users/zippo/Sites/aiai/aiai/php/tidrapport/class/timlista.class.php",
+		"/Users/zippo/Sites/aiai/Tests/Class2/TimlistaTest.php",
+		"/Users/zippo/Downloads/java/classes/FFT2DApplet.html",
+		"/Users/zippo/Downloads/loneData-1404.xml",
+		"/Users/zippo/git/sauce-demo/WebDriverDemo.php",
+		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/private/var/folders/3q/wj00hgm9763f3kjl2kyk80380000gn/T/ide-phpunit.php",
+		"/Users/zippo/Documents/Servers private/ec2.asc",
+		"/Users/zippo/Downloads/loneData-1404.pax",
+		"/Users/zippo/Sites/aiai/vendor/composer/autoload_real.php",
+		"/Users/zippo/Downloads/loneData-1404 Linköping.xml",
+		"/Users/zippo/Downloads/loneData-1404 Norrköping.xml",
+		"/Users/zippo/Documents/Manualer/Huqvarna 55 motorsåg/tändstiftMotorsåg",
+		"/Users/zippo/Dropbox/Kaustik-ledningsgrupp/Möten/Högpresterande Ledningsgrupp/CS_anteckningar.asc",
+		"/Users/zippo/Documents/Aiai/Möten/2013-04-24-GT-möteOmDelägareMm.asc",
+		"/Users/zippo/Documents/Aiai/Möten/2013-04-konferens-kund-socialt",
+		"/Users/zippo/Documents/Lathund/eclipse_settings.asc",
+		"/Users/zippo/Documents/ChristianPhp/doctrine_bugs.asc",
+		"/Volumes/HTDOCS/htdocs/Textfiles/todo/rutiner.txt",
+		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/zippo/Desktop/aiaise_db_2014-03-12.csv",
+		"/Users/zippo/Documents/Aiai/PodioMemes.asc",
+		"/Users/zippo/Sites/aiai/aiai/php/Test_Models/SjuklonDataProvider.class.php",
+		"/etc/hosts",
+		"/Users/zippo/Sites/aiai/aiai/php/Test_Controllers/Sandbox_Test_Controller.class.php",
+		"/Users/zippo/Downloads/aiai vs symfony.php",
+		"/Users/zippo/Pictures/Desktop/upplösningar_resolutions.asc",
+		"/Users/zippo/git/codesniffer/lib/src/lint/engine/PhpLintEngine.php",
+		"/tmp/lonarter.txt",
+		"/Users/zippo/Documents/Aiai/FK-data/Checklista_LEFI_Online.pdf",
+		"/Users/zippo/Documents/Lemansgatan/dokument/blanketter/andrahand.pdf",
+		"/Users/zippo/Documents/Lathund/Silex.pdf",
+		"/Users/zippo/Library/Mail/V2/IMAP-support+aiai.se@imap.aiai.se/INBOX.mbox/Sent Messages.mbox/17EA2E46-E0AE-43A4-B1A1-42D19E7A6D31/Data/7/3/2/Attachments/237229/2.2/BruttoNetto Emelie 2012/10 BruttoNettoAdminOkt2012.pdf",
+		"/Users/zippo/Dropbox/Kaustik-utveckling/dokumentation/Benämningar_Roller.pdf",
+		"/Users/zippo/Documents/Blandat/Kartongplakat.ai",
+		"/Users/zippo/Documents/CD & DVD/cd.ai",
+		"/Users/zippo/git/unofficial/wordJuggler/.gitignore",
+		"/Users/zippo/git/unofficial/podcastFeed/composer.json",
+		"/Users/zippo/git/unofficial/podioStats/.gitignore",
+		"/Users/zippo/git/unofficial/wordJuggler/composer.json",
+		"/Users/zippo/Sites/aiai/scripts/logstash.conf",
+		"/Users/zippo/Todo/todoTestAiaiPersonal.md",
+		"/Users/zippo/Dropbox/Kaustik/1 Personal/Kick off - Konferens/Sankt Jörgen 24:1 2014/cs_anteckningar.asc",
+		"/Users/zippo/Sites/aiai/aiai/php/Controllers/Tidrapport_Controller.class.php",
+		"/Users/zippo/Documents/linux/ssl.txt",
+		"/Users/zippo/Todo/todoCharlieLindströmLön.asc",
+		"/Users/zippo/Downloads/ordböcker/aspell-sv-0.51-0/sv.cwl",
+		"/Users/zippo/Downloads/loneData-1312.csv",
+		"/Users/zippo/Dropbox/Kaustik/4 Kunder/Olivia Omsorg Oliviakoncernen/1. Projektet Omsorg24/Möte - Schematyper/cs-anteckningar.asc",
+		"/Users/zippo/Downloads/node-v0.10.24-darwin-x64/README.md",
+		"/Users/zippo/git/vagrant/Vagrantfile",
+		"/Users/zippo/Todo/todoDelegate.md",
+		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/Users/zippo/Downloads/kured",
+		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/Java/Ant.sublime-build",
+		"/Users/zippo/Todo/todoAll.asc.mdown"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<payTypeId>15",
+			"1163",
+			"gatling",
+			"psr",
+			"stric",
+			"fel",
+			"selen",
+			"151603",
+			"1609",
+			"xdebug",
+			"omsorg",
+			"nara",
+			"kop",
+			"snif",
+			">214",
+			"\n",
+			"to",
+			".php",
+			"diction",
+			"tempus",
+			"mcrypt",
+			"end",
+			"              \n",
+			"            \n",
+			"              \n",
+			"            \n",
+			"\" ",
+			"log_level",
+			" '/",
+			"ls",
+			"    \n",
+			"}\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Vikan"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "brollop.kungekasen.se.conf",
+					"settings":
+					{
+						"buffer_size": 402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 59.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"php",
+				"phpstorm"
+			],
+			[
+				"asc",
+				"/Users/zippo/Todo/todoAll.asc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
