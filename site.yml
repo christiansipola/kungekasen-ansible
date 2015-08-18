@@ -8,15 +8,13 @@
         - apache2
         - git
         - libapache2-mod-php5
-        - ffmpeg
-    - name: enabled mod_rewrite
-      apache2_module: name=rewrite state=present
+    - name: enabled apache2 mods
+      apache2_module: name={{ item }} state=present
       notify:
         - restart apache2
-    - name: enabled php in apache2
-      command: a2enmod php5
-      notify:
-        - restart apache2
+      with_items:
+        - rewrite
+        - php5
     - name: ssh_known_hosts
       copy: src=files/ssh_known_hosts dest=/etc/ssh/
     - name: install composer
