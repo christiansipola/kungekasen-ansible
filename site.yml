@@ -2,6 +2,16 @@
 - hosts: kungekasen
   sudo: yes
   tasks:
+    - locale_gen: name=sv_SE.UTF-8 state=present
+    - name: Set timezone variables
+      copy: content='CET\n'
+            dest=/etc/timezone
+            owner=root
+            group=root
+            mode=0644
+            backup=yes
+      notify:
+        - update timezone
     - name: install packages
       apt: name={{ item}} update_cache=yes state=latest
       with_items:
@@ -34,9 +44,8 @@
     - cron: name="p3popular fredag" minute="0" hour="2" weekday="6"
             user=www-data
             job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
-    - cron: name="p3popular följer pengarna" minute="0" hour="2" weekday="3"
-            user=www-data
-            job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
+    - name: update timezone
+      command: dpkg-reconfigure --frontend noninteractive tzdata
