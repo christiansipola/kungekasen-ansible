@@ -44,6 +44,7 @@
     - cron: name="p3popular fredag" minute="0" hour="2" weekday="6"
             user=www-data
             job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
+    - user: name=christian groups=adm,sudo
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
