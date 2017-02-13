@@ -1,0 +1,15 @@
+# See man 5 aliases for format
+postmaster:    root
+root: christian
+c: christian
+zippo: christian
+hostmaster: christian
+dev: christian
+admin:  christian
+temp: zippo
+z: christian
+cNet1: christian
+cNet2: christian
+cNet3: christian
+
+
