@@ -1,0 +1,12 @@
+---
+# tasks file for goetzk.filesystems
+- name: Include per distribution variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- include: prepare-ro.yml
+
+# Nothing needs to happen for noexec at this time
+# - include: prepare-noexec.yml
+
+- include: configure-filesystems.yml
+

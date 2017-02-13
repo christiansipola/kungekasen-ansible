@@ -25,8 +25,12 @@
       with_items:
         - rewrite
         - php5
+        - ssl
     - name: ssh_known_hosts
       copy: src=files/ssh_known_hosts dest=/etc/ssh/
+    - name: aliases
+      copy: src=files/aliases dest=/etc/aliases
+      notify: newaliases
     - name: install composer
       shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
       args:
@@ -38,15 +42,38 @@
                domain=podcast.kungekasen.se
                name=podcastFeed
     ## monday 1, tuesday 2, wednesday 3 thursday 4, friday 5, saturday 6, sunday 0
-    - cron: name="p3popular part 2 måndag till torsdag" minute="0" hour="2" weekday="2-5"
+    - cron: name="p3popular part 2 måndag till torsdag" minute="0" hour="7" weekday="2-5"
             user=www-data
             job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 2 >> /tmp/log 2>> /tmp/log2"
-    - cron: name="p3popular fredag" minute="0" hour="2" weekday="6"
-            user=www-data
-            job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 1 >> /tmp/log 2>> /tmp/log2"
+    - cron: name="clear tmp every night for older than 14 days" minute="0" hour="2"
+            user=root
+            job="sudo find /tmp -ctime +14 -exec rm -rf {} +"
     - user: name=christian groups=adm,sudo
+    - include: tasks/virtualhost.yaml
+               domain=kungekasen.se
+               name=kungekasen.se
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
     - name: update timezone
       command: dpkg-reconfigure --frontend noninteractive tzdata
+    - name: newaliases
+      command: newaliases
+  vars:
+    - filesystems_ro_rootfs_enable: false
+    - courier_esmtpd_enable: false
+    - courier_imap_tls_certfile: /etc/letsencrypt/live/kungekasen.se/fullchain.pem
+    - courier_home_mailbox: Maildir/
+    - postfix_myhostname: kungekasen.se
+    #- postfix_mydestination: $mydomain, $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
+    - postfix_inet_interfaces: all
+    - postfix_smtpd_use_tls: yes
+    - postfix_smtp_sasl_auth_enable: yes
+    - postfix_smtp_sasl_user: "{{ansible_ssh_user}}"
+    - postfix_smtp_sasl_password: "tjenare336"
+  roles:
+    #https://github.com/goetzk/ansible-courier  
+    - { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true }
+    #https://github.com/Stouts/Stouts.postfix
+    - Stouts.postfix
+

@@ -1,0 +1,10 @@
+---
+- name: Install Courier IMAP SSL daemon
+  apt: pkg=courier-imap-ssl state=present
+
+- name: Install Courier IMAP SSL configuration
+  template: owner=root group=root
+    src=imapd-ssl.tmpl
+    dest=/etc/courier/imapd-ssl
+  notify: Restart courier imap ssl
+

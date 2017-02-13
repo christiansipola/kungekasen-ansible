@@ -1,0 +1,162 @@
+---
+# Vars from other roles:
+
+# Where should the key/cert go?
+openssl_certs_path: /etc/courier
+openssl_keys_path: /etc/courier
+
+
+# Courier authdaemon
+
+# Authentication backend to use, see templates/authdaemonrc for the full list.
+courier_authdaemon_authmodulelist: 'authpam'
+# Log debug information to syslog, 0 disables, 2 saves passwords in plain text
+courier_authdaemon_debug_login: '0'
+# Extra application options
+courier_authdaemon_defaultoptions: ''
+# Logging options
+courier_authdaemon_loggeropts: ''
+
+# Other details of the certificate need to be entered by you
+
+
+# Imapd configuration, see templates/imapd.tmpl for details of the options
+# Default address for ports which don't specify (0 means any)
+courier_imap_address: '0'
+# Default port 
+courier_imap_port: '143'
+# Location of pid file
+courier_imap_pidfile: '/var/run/courier/imapd.pid'
+# Should the server check for mail in every folder
+courier_imap_check_all_folders: '0'
+# Mask of files created by imap server
+courier_imap_umask: '022'
+# Name of the Trash folder, useful for Outlook Express compatibility
+courier_imap_trashfoldername: 'Trash'
+# Adding comma separated Folder:value pairs will turn on purging of the Folder
+# contents when it reaches value days old.
+courier_imap_emptytrash: ''
+# Should Courier IMAP be started?
+courier_imap_start_daemon: 'yes'
+# Maildir name
+courier_imap_maildir: 'Maildir'
+
+
+# Should we install/enable openssl support?
+courier_imap_ssl_enable: true
+
+# Imapd configuration, see templates/imapd.tmpl for details of the options
+# Default address for ports which don't specify (0 means any)
+courier_imap_ssl_address: '0'
+# Default port 
+courier_imap_ssl_port: '993'
+# Location of pid file
+courier_imap_ssl_pidfile: '/var/run/courier/imapd-ssl.pid'
+# Should we disable SSL on port 993 and just use TLS on 143
+courier_imap_ssl_start: 'yes'
+# Should all connections be over TLS
+courier_imap_tls_required: 0
+# certificate file for secure connections
+courier_imap_tls_certfile: /etc/courier/imapd.pem
+# Location of CAs (trusted certificates)
+courier_imap_tls_trust_certs: /etc/ssl/certs
+# What form of client certificate verification to use
+courier_imap_tls_verifypeer: 'NONE'
+# Maildir name
+courier_imap_ssl_maildir: 'Maildir'
+
+
+# Courier ESMTPD
+
+# TODO: Should path and shell be added here?
+
+# Set 0 to accept mail with bad return address.
+courier_esmtpd_checkdns: 1
+# Set 1 to disable address list expansion (See rfc821 p24)
+courier_esmtpd_noexpn: 0
+# Set 1 to disable sender address verification (See rfc821 p24)
+courier_esmtpd_novrfy: 0
+# Set 0 to disable tarpitting
+courier_esmtpd_tarpit: 1
+# Should we log esmtp dialog from the sender
+courier_esmtpd_log_dialog: 0
+# Is authentication required?
+courier_esmtpd_auth_required: 0
+
+# This option varies by esmtpd/msa
+# Add message-id if it is missing, 1 to stop adding it, 0 to start
+courier_esmtpd_noaddmsgid: 1
+# Add date header if it is missing, 1 to stop adding it, 0 to start
+courier_esmtpd_noadddate: 1
+
+# Verify peers doing certificate authentication? none disables it.
+courier_esmtpd_tls_verifypeer: NONE
+
+# Only in esmtpd.tmpl, not esmtpd-ssl.tmpl
+# Is TLS required?
+courier_esmtpd_tls_required: 0
+# who should this run as
+courier_esmtpd_mailuser: daemon
+courier_esmtpd_mailgroup: daemon
+# address to listen on
+courier_esmtpd_address: 0
+# Port to listen on
+courier_esmtpd_port: smtp
+# blacklists can be set manually using -block. See docs.
+courier_esmtpd_blacklists: ''
+# Access file (defaults to file used by courier_esmtp)
+courier_esmtpd_accessfile: '${sysconfdir}/smtpaccess'
+# Where the pid goes
+courier_esmtpd_pidfile: /var/run/courier/esmtpd.pid
+# Set supported authentication mechanisms for authenticated relaying, this does
+# not require tls
+courier_esmtpd_auth: ''
+# Set supported authentication mechanisms for authenticated relaying as above
+# but this entry does require tls
+courier_esmtpd_auth_tls: ''
+# Should we start esmtpd?
+courier_esmtpd_start: YES
+
+
+# Courier ESMTPD SSL
+
+# Should ESMTPD SSL be enabled?
+# TODO: make this false by default
+courier_esmtpd_ssl_enable: true
+
+# Add message-id if it is missing, 1 to stop adding it, 0 to start
+courier_esmtpd_ssl_noaddmsgid: 1
+# Add date header if it is missing, 1 to stop adding it, 0 to start
+courier_esmtpd_ssl_noadddate: 1
+# Port to use for SSL connections
+courier_esmtpd_ssl_port: 465
+# Address to listen on
+courier_esmtpd_ssl_address: 0
+# Where should the pidfile go for esmtpd ssl
+courier_esmtpd_ssl_pidfile: /var/run/courier/esmtpd-ssl.pid
+# Should esmtps be started?
+courier_esmtpd_ssl_daemon_start: YES
+# Certificate file Location of certificate, see esmtpd-ssl for specifics. These
+# two are shared accross esmtpd{,-ssl}
+courier_esmtpd_tls_certfile: /etc/courier/esmtpd.pem
+# Trusted certificates for certificate authentication
+courier_esmtpd_tls_trustcerts: /etc/ssl/certs
+# Verify peers doing certificate authentication? none disables it.
+courier_esmtpd_ssl_tls_external: ''
+
+
+# Courier MSA (mail submission agent)
+
+# Add message-id if it is missing, change to 1 to stop adding it
+courier_msa_noaddmsgid: 0
+# Add date header if it is missing, change to 1 to stop adding it
+courier_msa_noadddate: 0
+# IP Address to listen on
+courier_msa_address: 0
+# Port to listen on, see esmtpd-msa for details of its usage
+courier_msa_port: 587
+# Location of pid file
+courier_msa_pidfile: '/var/run/courier/esmtpd-msa.pid'
+# Should the daemon be started - this value also appears in esmtpd configuration.
+courier_msa_esmtpdstart: NO
+
