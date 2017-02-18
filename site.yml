@@ -18,6 +18,9 @@
         - apache2
         - git
         - libapache2-mod-php5
+        - spamassassin
+        - spamc
+        - courier-maildrop
     - name: enabled apache2 mods
       apache2_module: name={{ item }} state=present
       notify:
