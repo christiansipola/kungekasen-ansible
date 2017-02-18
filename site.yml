@@ -55,6 +55,24 @@
     - include: tasks/virtualhost.yaml
                domain=kungekasen.se
                name=kungekasen.se
+    - group: name=spamd
+    - user: name=spamd groups=spamd home=/var/log/spamassassin shell=/bin/false
+    - name: spamassassin enabled           
+      lineinfile:
+        dest: /etc/default/spamassassin
+        regexp: '^ENABLED='
+        line: 'ENABLED=1'
+    - name: spamassassin cron
+      lineinfile:
+        dest: /etc/default/spamassassin
+        regexp: '^CRON='
+        line: 'CRON=1'
+    - name: spamassassin options
+      lineinfile:
+        dest: /etc/default/spamassassin
+        regexp: '^OPTIONS='
+        line: 'OPTIONS="--create-prefs --max-children 2 --username spamd \
+        -H /var/log/spamassassin -s /var/log/spamassassin/spamd.log"'
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
