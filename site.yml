@@ -68,7 +68,7 @@
     - courier_imap_tls_certfile: /etc/letsencrypt/live/kungekasen.se/fullchain.pem
     - courier_home_mailbox: Maildir/
     - postfix_myhostname: kungekasen.se
-    #- postfix_mydestination: $mydomain, $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
+    - postfix_mydestination: $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
     - postfix_inet_interfaces: all
     - postfix_smtpd_use_tls: yes
     - postfix_smtp_sasl_auth_enable: yes
