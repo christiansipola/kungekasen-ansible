@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"www",
+				"www-data"
+			],
+			[
 				"relo",
 				"reload_commands"
 			]
@@ -12,10 +16,10 @@
 	"buffers":
 	[
 		{
-			"file": "brollop.kungekasen.se.conf",
+			"file": "/Users/zippo/git/kungekasen-ansible/site.yml",
 			"settings":
 			{
-				"buffer_size": 402,
+				"buffer_size": 2503,
 				"line_ending": "Unix"
 			}
 		}
@@ -60,6 +64,18 @@
 	},
 	"file_history":
 	[
+		"/Users/zippo/git/kungekasen-ansible/ansible.cfg",
+		"/Users/zippo/git/kungekasen-ansible/tasks/composerdomain.yaml",
+		"/Users/zippo/git/kungekasen-ansible/goetzk.courier/defaults/main.yml",
+		"/Users/zippo/git/kungekasen-ansible/tasks/courier.yaml",
+		"/Users/zippo/git/kungekasen-ansible/goetzk.courier/handlers/main.yml",
+		"/Users/zippo/git/kungekasen-ansible/goetzk.courier/vars/main.yml",
+		"/Users/zippo/git/kungekasen-ansible/run-ansible.sh",
+		"/Users/zippo/git/kungekasen-ansible/files/timezone",
+		"/etc/hosts",
+		"/Users/zippo/git/kungekasen-ansible/virtualhosts/podcast.kungekasen.se.conf",
+		"/Users/zippo/git/kungekasen-ansible/virtualhosts/brollop.kungekasen.se.conf",
+		"/Users/zippo/git/kungekasen-ansible/files/ssh_known_hosts",
 		"/Users/zippo/git/kungekasen-ansible/apache.yml",
 		"/Users/zippo/git/kungekasen-ansible/inventory",
 		"/Volumes/Passwords/ÖvrigaLösenord.md",
@@ -155,7 +171,6 @@
 		"/Users/zippo/Desktop/aiaise_db_2014-03-12.csv",
 		"/Users/zippo/Documents/Aiai/PodioMemes.asc",
 		"/Users/zippo/Sites/aiai/aiai/php/Test_Models/SjuklonDataProvider.class.php",
-		"/etc/hosts",
 		"/Users/zippo/Sites/aiai/aiai/php/Test_Controllers/Sandbox_Test_Controller.class.php",
 		"/Users/zippo/Downloads/aiai vs symfony.php",
 		"/Users/zippo/Pictures/Desktop/upplösningar_resolutions.asc",
@@ -176,18 +191,7 @@
 		"/Users/zippo/Todo/todoTestAiaiPersonal.md",
 		"/Users/zippo/Dropbox/Kaustik/1 Personal/Kick off - Konferens/Sankt Jörgen 24:1 2014/cs_anteckningar.asc",
 		"/Users/zippo/Sites/aiai/aiai/php/Controllers/Tidrapport_Controller.class.php",
-		"/Users/zippo/Documents/linux/ssl.txt",
-		"/Users/zippo/Todo/todoCharlieLindströmLön.asc",
-		"/Users/zippo/Downloads/ordböcker/aspell-sv-0.51-0/sv.cwl",
-		"/Users/zippo/Downloads/loneData-1312.csv",
-		"/Users/zippo/Dropbox/Kaustik/4 Kunder/Olivia Omsorg Oliviakoncernen/1. Projektet Omsorg24/Möte - Schematyper/cs-anteckningar.asc",
-		"/Users/zippo/Downloads/node-v0.10.24-darwin-x64/README.md",
-		"/Users/zippo/git/vagrant/Vagrantfile",
-		"/Users/zippo/Todo/todoDelegate.md",
-		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
-		"/Users/zippo/Downloads/kured",
-		"/Users/zippo/Library/Application Support/Sublime Text 2/Packages/Java/Ant.sublime-build",
-		"/Users/zippo/Todo/todoAll.asc.mdown"
+		"/Users/zippo/Documents/linux/ssl.txt"
 	],
 	"find":
 	{
@@ -261,28 +265,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "brollop.kungekasen.se.conf",
+					"file": "/Users/zippo/git/kungekasen-ansible/site.yml",
 					"settings":
 					{
-						"buffer_size": 402,
+						"buffer_size": 2503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								338,
-								338
+								2101,
+								2101
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 508.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -296,7 +300,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -336,6 +340,10 @@
 		"selected_items":
 		[
 			[
+				"run",
+				"run-ansible.sh"
+			],
+			[
 				"php",
 				"phpstorm"
 			],
@@ -358,6 +366,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true
 }
