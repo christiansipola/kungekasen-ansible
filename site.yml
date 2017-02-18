@@ -20,7 +20,7 @@
         - libapache2-mod-php5
         - spamassassin
         - spamc
-        - courier-maildrop
+        - maildrop
     - name: enabled apache2 mods
       apache2_module: name={{ item }} state=present
       notify:
@@ -73,6 +73,10 @@
         regexp: '^OPTIONS='
         line: 'OPTIONS="--create-prefs --max-children 2 --username spamd \
         -H /var/log/spamassassin -s /var/log/spamassassin/spamd.log"'
+    - name: spamassassin local.cf
+      copy: src=files/local.cf dest=/etc/spamassassin/
+      notify:
+        - restart spamassassin
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted

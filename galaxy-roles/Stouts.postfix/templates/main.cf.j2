@@ -75,6 +75,7 @@ mydomain = {{postfix_mydomain}}
 mailbox_command = /usr/bin/procmail -a "$EXTENSION"
 {% endif %}
 
-## christians egna
 home_mailbox = Maildir/
+virtual_transport = maildrop
+maildrop_destination_recipient_limit = 1
 
