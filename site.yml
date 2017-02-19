@@ -80,6 +80,8 @@
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
+    - name: restart spamassassin
+      service: name=spamassassin state=restarted
     - name: update timezone
       command: dpkg-reconfigure --frontend noninteractive tzdata
     - name: newaliases
