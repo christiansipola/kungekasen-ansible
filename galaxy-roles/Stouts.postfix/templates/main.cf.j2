@@ -49,8 +49,9 @@ smtp_use_tls = yes
 # otherwise not sending to mailservers without tls
 smtp_tls_security_level = may 
 smtp_tls_CAfile = {{ postfix_smtp_tls_cafile }}
-smtpd_tls_loglevel = 3
-smtpd_tls_auth_only = yes
+smtpd_tls_loglevel = 2
+## not working yet in mail os x
+#smtpd_tls_auth_only = yes
 smtpd_tls_received_header = yes
 smtpd_tls_session_cache_timeout = 3600s
 smtpd_recipient_restrictions =
