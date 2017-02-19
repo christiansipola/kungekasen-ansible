@@ -3,3 +3,7 @@
 #
 # report_safe 1
 report_safe 0
+
+required_score 3
+
+bayes_auto_learn 1
