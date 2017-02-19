@@ -77,6 +77,11 @@
       copy: src=files/local.cf dest=/etc/spamassassin/
       notify:
         - restart spamassassin
+    - name: maildrop su-bit
+      file:
+        dest: /usr/bin/maildrop
+        state: touch
+        mode: "2755"
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
@@ -96,7 +101,7 @@
     - postfix_inet_interfaces: all
     - postfix_smtpd_use_tls: yes
     - postfix_smtp_sasl_auth_enable: yes
-    - postfix_smtp_sasl_user: "{{ansible_ssh_user}}"
+    - postfix_smtp_sasl_user: "christian"
     - postfix_smtp_sasl_password: "tjenare336"
   roles:
     #https://github.com/goetzk/ansible-courier  
