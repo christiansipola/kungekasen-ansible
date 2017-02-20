@@ -41,13 +41,13 @@ local_recipient_maps = {{ postfix_local_recipient_map }}
 {% endif %}
 
 {% if postfix_smtp_sasl_auth_enable %}
-smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtpd_sasl_auth_enable = yes
+#smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
 smtpd_sasl_local_domain = $myhostname
-smtp_use_tls = yes
+smtpd_sasl_path = smtpd
 # otherwise not sending to mailservers without tls
-smtp_tls_security_level = may 
+smtpd_tls_security_level = may 
 smtp_tls_CAfile = {{ postfix_smtp_tls_cafile }}
 smtpd_tls_loglevel = 2
 ## not working yet in mail os x

@@ -101,8 +101,6 @@
     - postfix_inet_interfaces: all
     - postfix_smtpd_use_tls: yes
     - postfix_smtp_sasl_auth_enable: yes
-    - postfix_smtp_sasl_user: "christian"
-    - postfix_smtp_sasl_password: "tjenare336"
   roles:
     #https://github.com/goetzk/ansible-courier  
     - { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true }
