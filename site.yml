@@ -84,6 +84,15 @@
         mode: "2755"
     - name: maildrop conf 
       copy: src=files/maildroprc dest=/etc/
+    #- name: create empty imapd ssl
+    #  local_action: "shell > /etc/courier/imapd.pem"
+    #- name: concat keys to courier
+    #  local_action: "shell echo {{ item }} >> /etc/courier/imapd.pem"
+    #  with_file:
+    #    - /etc/letsencrypt/live/kungekasen.se/privkey.pem
+    #    - /etc/letsencrypt/live/kungekasen.se/fullchain.pem
+    ## cat /etc/letsencrypt/live/kungekasen.se/privkey.pem \
+    ## /etc/letsencrypt/live/kungekasen.se/fullchain.pem > /etc/courier/imapd.pem
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
@@ -96,7 +105,6 @@
   vars:
     - filesystems_ro_rootfs_enable: false
     - courier_esmtpd_enable: false
-    - courier_imap_tls_certfile: /etc/letsencrypt/live/kungekasen.se/fullchain.pem
     - courier_home_mailbox: Maildir/
     - postfix_myhostname: kungekasen.se
     - postfix_mydestination: $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
