@@ -82,6 +82,8 @@
         dest: /usr/bin/maildrop
         state: touch
         mode: "2755"
+    - name: maildrop conf 
+      copy: src=files/maildroprc dest=/etc/
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted

@@ -7,8 +7,10 @@ DEFAULT="$HOME/Maildir"
 logfile "/tmp/filterlog.txt"
 
 # If the Spam-Flag is set, move the mail to the Junk folder
-if (/^X-Spam-Flag:.*YES/) {
-	exception {
-		to $DEFAULT/.Spam/
-	}
+if(/^X-Spam-Flag:.*YES/)
+{	
+	to $DEFAULT/.Spam/
+	## set status to read
+  	#`for x in ls ${DEFAULT}/.Spam/new/*; do mv $x ${DEFAULT}/.Spam/cur/${x##*/}:2,S; done`
+  	#exit
 }
