@@ -84,6 +84,14 @@
         mode: "2755"
     - name: maildrop conf 
       copy: src=files/maildroprc dest=/etc/
+    ## FIXME does not create the file
+    - name: maildrop log
+      file:
+        dest: /var/log/maildrop.log
+        state: touch
+        owner: root
+        group: mail
+        mode: "660"
     #- name: create empty imapd ssl
     #  local_action: "shell > /etc/courier/imapd.pem"
     #- name: concat keys to courier

@@ -4,7 +4,7 @@
 # delivery- this is where courier-imap (amongst others) will look.
 DEFAULT="$HOME/Maildir"
 
-logfile "/tmp/filterlog.txt"
+logfile "/var/log/maildrop.log"
 
 # If the Spam-Flag is set, move the mail to the Junk folder
 if(/^X-Spam-Flag:.*YES/)
