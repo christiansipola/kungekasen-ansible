@@ -11,6 +11,6 @@ if(/^X-Spam-Flag:.*YES/)
 {	
 	to $DEFAULT/.Spam/
 	## set status to read
-  	#`for x in ls ${DEFAULT}/.Spam/new/*; do mv $x ${DEFAULT}/.Spam/cur/${x##*/}:2,S; done`
-  	#exit
+  	`for x in ls ${DEFAULT}/.Spam/new/*; do mv $x ${DEFAULT}/.Spam/cur/${x##*/}:2,S; done`
+  	exit
 }
