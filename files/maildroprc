@@ -10,7 +10,10 @@ logfile "/var/log/maildrop.log"
 if(/^X-Spam-Flag:.*YES/)
 {	
 	to $DEFAULT/.Spam/
-	## set status to read
+	## move from unseen to seen and mark as unread
   	`for x in ls ${DEFAULT}/.Spam/new/*; do mv $x ${DEFAULT}/.Spam/cur/${x##*/}:2,S; done`
+
+  	## mark seen as read
+  	`for x in ls ${DEFAULT}/.Spam/cur/*2,; do mv $x ${x}S; done`
   	exit
 }
