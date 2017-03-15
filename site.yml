@@ -21,6 +21,7 @@
         - spamassassin
         - spamc
         - maildrop
+    - include: tasks/mail.yaml
     - name: enabled apache2 mods
       apache2_module: name={{ item }} state=present
       notify:
@@ -51,56 +52,9 @@
     - cron: name="clear tmp every night for older than 14 days" minute="0" hour="2"
             user=root
             job="sudo find /tmp -ctime +14 -exec rm -rf {} +"
-    - user: name=christian groups=adm,sudo
     - include: tasks/virtualhost.yaml
                domain=kungekasen.se
                name=kungekasen.se
-    - group: name=spamd
-    - user: name=spamd groups=spamd home=/var/log/spamassassin shell=/bin/false
-    - name: spamassassin enabled           
-      lineinfile:
-        dest: /etc/default/spamassassin
-        regexp: '^ENABLED='
-        line: 'ENABLED=1'
-    - name: spamassassin cron
-      lineinfile:
-        dest: /etc/default/spamassassin
-        regexp: '^CRON='
-        line: 'CRON=1'
-    - name: spamassassin options
-      lineinfile:
-        dest: /etc/default/spamassassin
-        regexp: '^OPTIONS='
-        line: 'OPTIONS="--create-prefs --max-children 2 --username spamd \
-        -H /var/log/spamassassin -s /var/log/spamassassin/spamd.log"'
-    - name: spamassassin local.cf
-      copy: src=files/local.cf dest=/etc/spamassassin/
-      notify:
-        - restart spamassassin
-    - name: maildrop su-bit
-      file:
-        dest: /usr/bin/maildrop
-        state: touch
-        mode: "2755"
-    - name: maildrop conf 
-      copy: src=files/maildroprc dest=/etc/
-    ## FIXME does not create the file
-    - name: maildrop log
-      file:
-        dest: /var/log/maildrop.log
-        state: touch
-        owner: root
-        group: mail
-        mode: "660"
-    #- name: create empty imapd ssl
-    #  local_action: "shell > /etc/courier/imapd.pem"
-    #- name: concat keys to courier
-    #  local_action: "shell echo {{ item }} >> /etc/courier/imapd.pem"
-    #  with_file:
-    #    - /etc/letsencrypt/live/kungekasen.se/privkey.pem
-    #    - /etc/letsencrypt/live/kungekasen.se/fullchain.pem
-    ## cat /etc/letsencrypt/live/kungekasen.se/privkey.pem \
-    ## /etc/letsencrypt/live/kungekasen.se/fullchain.pem > /etc/courier/imapd.pem
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
