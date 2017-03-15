@@ -1,13 +1,28 @@
 ---
-- name:
+- name: sa-learn
   copy:
     src: files/sa-learn.sh
     dest: /usr/local/bin/
     mode: "a+x"
-    #tags: debug
-- cron: name="update spamassassin rules for christian" minute="21" hour="5"
+  tags:
+    - debug
+- cron: name="update spamassassin rules for christian" minute="59" hour="20"
             user=root
-            job="nice -n19 cd /home/christian && sa-learn.sh >> /tmp/log 2>> /tmp/log2"
+            job="nice -n19 /usr/local/bin/sa-learn.sh /home/christian >> /tmp/log 2>> /tmp/log2"
+  tags:
+    - debug
+- name: mark as read
+  copy:
+    src: files/mark_spam_as_read.sh
+    dest: /usr/local/bin/
+    mode: "a+x"
+  tags:
+    - debug
+- cron: name="mark christian spam as read"
+            user=root
+            job="nice -n19 /usr/local/bin/mark_spam_as_read.sh /home/christian >> /tmp/log 2>> /tmp/log2"
+  tags:
+    - debug
 - user: name=christian groups=adm,sudo
 - group: name=spamd
 - user: name=spamd groups=spamd home=/var/log/spamassassin shell=/bin/false
@@ -38,6 +53,8 @@
     mode: "2755"
 - name: maildrop conf 
   copy: src=files/maildroprc dest=/etc/
+  tags:
+    - debug
 ## FIXME does not create the file
 - name: maildrop log
   file:
