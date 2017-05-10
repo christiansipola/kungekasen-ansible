@@ -4,13 +4,9 @@
     src: files/sa-learn.sh
     dest: /usr/local/bin/
     mode: "a+x"
-  tags:
-    - debug
-- cron: name="update spamassassin rules for christian" minute="59" hour="20"
+- cron: name="update spamassassin rules for christian" minute="21" hour="04"
             user=root
             job="nice -n19 /usr/local/bin/sa-learn.sh /home/christian >> /tmp/log 2>> /tmp/log2"
-  tags:
-    - debug
 - name: mark as read
   copy:
     src: files/mark_spam_as_read.sh
@@ -53,8 +49,6 @@
     mode: "2755"
 - name: maildrop conf 
   copy: src=files/maildroprc dest=/etc/
-  tags:
-    - debug
 ## FIXME does not create the file
 - name: maildrop log
   file:
