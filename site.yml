@@ -1,6 +1,6 @@
 ---
 - hosts: kungekasen
-  sudo: yes
+  become: true
   tasks:
     - locale_gen: name=sv_SE.UTF-8 state=present
     - name: Set timezone variables
@@ -17,7 +17,7 @@
       with_items:
         - apache2
         - git
-        - libapache2-mod-php5
+        - libapache2-mod-php
         - spamassassin
         - spamc
         - maildrop
@@ -28,7 +28,7 @@
         - restart apache2
       with_items:
         - rewrite
-        - php5
+        - php7.0
         - ssl
     - name: ssh_known_hosts
       copy: src=files/ssh_known_hosts dest=/etc/ssh/
