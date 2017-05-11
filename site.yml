@@ -1,6 +1,7 @@
 ---
 - hosts: kungekasen
-  become: true
+  become: yes
+  become_method: sudo
   tasks:
     - locale_gen: name=sv_SE.UTF-8 state=present
     - name: Set timezone variables
@@ -39,6 +40,7 @@
       shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
       args:
         creates: /usr/local/bin/composer
+      become_user: root 
     - include: tasks/composerdomain.yaml
                domain=brollop.kungekasen.se
                name=kungekasen
@@ -51,7 +53,7 @@
             job="nice -n19 /var/www/podcastFeed/downloadP3Popular.sh 2 >> /tmp/log 2>> /tmp/log2"
     - cron: name="clear tmp every night for older than 14 days" minute="0" hour="2"
             user=root
-            job="sudo find /tmp -ctime +14 -exec rm -rf {} +"
+            job="find /tmp -ctime +14 -exec rm -rf {} +"
     - include: tasks/virtualhost.yaml
                domain=kungekasen.se
                name=kungekasen.se
@@ -73,6 +75,7 @@
     - postfix_inet_interfaces: all
     - postfix_smtpd_use_tls: yes
     - postfix_smtp_sasl_auth_enable: yes
+    - postfix_smtp_sasl_user: "christian"
   roles:
     #https://github.com/goetzk/ansible-courier  
     - { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true }
