@@ -4,9 +4,10 @@
 # report_safe 1
 report_safe 0
 
-required_score 3
+required_score 2
 
 bayes_auto_learn 1
 
 bayes_path /var/log/spamassassin/.spamassassin/bayes
 whitelist_from *@facebookmail.com
+whitelist_from *@email.hellyhansen.com
