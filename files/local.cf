@@ -11,3 +11,7 @@ bayes_auto_learn 1
 bayes_path /var/log/spamassassin/.spamassassin/bayes
 whitelist_from *@facebookmail.com
 whitelist_from *@email.hellyhansen.com
+whitelist_from *@bokningdirekt.se
+whitelist_from *@unikum.net
+
+blacklist_from *@e.disneyconsumerproductsinteractive.com
