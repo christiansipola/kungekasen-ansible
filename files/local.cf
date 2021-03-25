@@ -14,4 +14,4 @@ whitelist_from *@email.hellyhansen.com
 whitelist_from *@bokningdirekt.se
 whitelist_from *@unikum.net
 
-blacklist_from *@e.disneyconsumerproductsinteractive.com
+blacklist_from *@coolycash.com
