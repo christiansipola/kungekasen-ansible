@@ -10,3 +10,11 @@ update with
 
 	
   
+## log
+manually set this 2020-04-16 i main.cf:
+
+message_size_limit = 20480000
+sudo postconf | grep message_size_limit
+default:
+message_size_limit = 10240000
+

@@ -12,13 +12,9 @@
     src: files/mark_spam_as_read.sh
     dest: /usr/local/bin/
     mode: "a+x"
-  tags:
-    - debug
 - cron: name="mark christian spam as read"
             user=root
             job="nice -n19 /usr/local/bin/mark_spam_as_read.sh /home/christian >> /tmp/log 2>> /tmp/log2"
-  tags:
-    - debug
 - user: name=christian groups=adm,sudo
 - group: name=spamd
 - user: name=spamd groups=spamd home=/var/log/spamassassin shell=/bin/false
@@ -57,6 +53,11 @@
     owner: root
     group: mail
     mode: "660"
+- cron: name="renew imap ssl from local letsencrypt" minute="21" hour="04" day="09"
+            user=root
+            job="cat /etc/letsencrypt/live/kungekasen.se/privkey.pem /etc/letsencrypt/live/kungekasen.se/fullchain.pem > /etc/courier/imapd.pem 2>> /tmp/log2"
+  tags:
+    - debug
 #- name: create empty imapd ssl
 #  local_action: "shell > /etc/courier/imapd.pem"
 #- name: concat keys to courier

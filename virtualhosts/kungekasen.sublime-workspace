@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"lo",
+				"local"
+			],
+			[
+				"spa",
+				"spamassassin"
+			],
+			[
 				"www",
 				"www-data"
 			],
@@ -19,7 +27,66 @@
 			"file": "/Users/zippo/git/kungekasen-ansible/site.yml",
 			"settings":
 			{
-				"buffer_size": 2503,
+				"buffer_size": 2919,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/zippo/git/kungekasen-ansible/README.md",
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/sys/termios.h",
+			"settings":
+			{
+				"buffer_size": 13882,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/zippo/git/scripts/checkssl.php",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "renew mailcert\n\n##  every second mont? 7≤< october last time, was renewed 7 sep\nsudo -s\n\n## no restart needed",
+			"settings":
+			{
+				"buffer_size": 109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/zippo/git/kungekasen-ansible/tasks/mail.yaml",
+			"settings":
+			{
+				"buffer_size": 2360,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 3.4.0 Release Notes\n  \n   -----------------------------------------------------------------------\n  | NOTICE: This will be the final release of Package Control supporting  |\n  | - Sublime Text 2                                                      |\n  | - Sublime Text 3 beta builds (<3143)                                  |\n   -----------------------------------------------------------------------\n  | Please see https://sublimetext.com for an updated build               |\n   -----------------------------------------------------------------------\n  \n  New features include:\n  \n   - Support for repositories hosted on https://gitlab.com - by TheSecEng\n  \n   - An alternative TLS implementation based on the oscrypto Python\n     library, which uses native operating system TLS libraries and\n     certificate handling. See the \"downloader_precedence\" setting to enable.\n  \n   - Preferences now use the side-by-side edit mode\n  \n   - Added command palette entries to enable and disable debug mode for\n     troubleshooting and bug reports\n  \n  Bug fixes include:\n  \n   - Fixed operation on macOS 11.0 Big Sur - by TheSecEng\n  \n   - Improved handling of invalid dependencies - by deathaxe\n  \n   - Corrected handling of unsuccessful downloads with wget - by deathaxe\n  \n   - Fixed various issues with the HTTP caching - by deathaxe\n  \n   - Updated the BitBucket provider to use the 2.0 API - deathaxe\n  \n   - Packages installed via symlinks are now unlinked instead of being\n     deleted when being removed or cleaned up - by rchl\n  \n   - Improved install performance of packages with large numbers of\n     files - by BenjaminSchaaf\n  \n   - Fixed handling of auth with the wininet downloader - by NicholasBuse\n  \n   - Fixed handling BitBucket repositories without a nickname\n  \n   - Resolved deadlocks and ignored packages occuring when removing multiple\n     dependencies at once\n  \n   - Package messages are no longer printed with trailing whitespace on lines\n     with no text - by dnicolson\n",
+			"settings":
+			{
+				"buffer_size": 2087,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/handlers/main.yml",
+			"settings":
+			{
+				"buffer_size": 304,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,8 +131,28 @@
 	},
 	"file_history":
 	[
-		"/Users/zippo/git/kungekasen-ansible/ansible.cfg",
+		"/Users/zippo/git/kungekasen-ansible/files/local.cf",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/defaults/main.yml",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/tasks/configure.yml",
+		"/Users/zippo/Downloads/loneData-1709.xml",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/goetzk.filesystems/tasks/configure-filesystems.yml",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/templates/sasl_passwd.j2",
+		"/Users/zippo/git/kungekasen-ansible/tasks/mail.yaml",
+		"/Users/zippo/git/kungekasen-ansible/files/sa-learn.sh",
+		"/Users/zippo/git/kungekasen-ansible/files/mark_spam_as_read.sh",
+		"/Users/zippo/Sites/aiai/Vagrantfile",
+		"/Users/zippo/git/kungekasen-ansible/README.md",
+		"/Users/zippo/git/kungekasen-ansible/files/maildroprc",
 		"/Users/zippo/git/kungekasen-ansible/tasks/composerdomain.yaml",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/templates/main.cf.j2",
+		"/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/templates/master.cf.j2",
+		"/Users/zippo/git/kungekasen-ansible/site.yml",
+		"/Users/zippo/git/kungekasen-ansible/virtualhosts/brollop.kungekasen.se.conf",
+		"/Users/zippo/git/kungekasen-ansible/tasks/virtualhost.yaml",
+		"/Users/zippo/git/kungekasen-ansible/files/aliases",
+		"/Users/zippo/git/kungekasen-ansible/virtualhosts/kungekasen.se.conf",
+		"/Users/zippo/git/kungekasen-ansible/hosts",
+		"/Users/zippo/git/kungekasen-ansible/ansible.cfg",
 		"/Users/zippo/git/kungekasen-ansible/goetzk.courier/defaults/main.yml",
 		"/Users/zippo/git/kungekasen-ansible/tasks/courier.yaml",
 		"/Users/zippo/git/kungekasen-ansible/goetzk.courier/handlers/main.yml",
@@ -74,7 +161,6 @@
 		"/Users/zippo/git/kungekasen-ansible/files/timezone",
 		"/etc/hosts",
 		"/Users/zippo/git/kungekasen-ansible/virtualhosts/podcast.kungekasen.se.conf",
-		"/Users/zippo/git/kungekasen-ansible/virtualhosts/brollop.kungekasen.se.conf",
 		"/Users/zippo/git/kungekasen-ansible/files/ssh_known_hosts",
 		"/Users/zippo/git/kungekasen-ansible/apache.yml",
 		"/Users/zippo/git/kungekasen-ansible/inventory",
@@ -172,26 +258,7 @@
 		"/Users/zippo/Documents/Aiai/PodioMemes.asc",
 		"/Users/zippo/Sites/aiai/aiai/php/Test_Models/SjuklonDataProvider.class.php",
 		"/Users/zippo/Sites/aiai/aiai/php/Test_Controllers/Sandbox_Test_Controller.class.php",
-		"/Users/zippo/Downloads/aiai vs symfony.php",
-		"/Users/zippo/Pictures/Desktop/upplösningar_resolutions.asc",
-		"/Users/zippo/git/codesniffer/lib/src/lint/engine/PhpLintEngine.php",
-		"/tmp/lonarter.txt",
-		"/Users/zippo/Documents/Aiai/FK-data/Checklista_LEFI_Online.pdf",
-		"/Users/zippo/Documents/Lemansgatan/dokument/blanketter/andrahand.pdf",
-		"/Users/zippo/Documents/Lathund/Silex.pdf",
-		"/Users/zippo/Library/Mail/V2/IMAP-support+aiai.se@imap.aiai.se/INBOX.mbox/Sent Messages.mbox/17EA2E46-E0AE-43A4-B1A1-42D19E7A6D31/Data/7/3/2/Attachments/237229/2.2/BruttoNetto Emelie 2012/10 BruttoNettoAdminOkt2012.pdf",
-		"/Users/zippo/Dropbox/Kaustik-utveckling/dokumentation/Benämningar_Roller.pdf",
-		"/Users/zippo/Documents/Blandat/Kartongplakat.ai",
-		"/Users/zippo/Documents/CD & DVD/cd.ai",
-		"/Users/zippo/git/unofficial/wordJuggler/.gitignore",
-		"/Users/zippo/git/unofficial/podcastFeed/composer.json",
-		"/Users/zippo/git/unofficial/podioStats/.gitignore",
-		"/Users/zippo/git/unofficial/wordJuggler/composer.json",
-		"/Users/zippo/Sites/aiai/scripts/logstash.conf",
-		"/Users/zippo/Todo/todoTestAiaiPersonal.md",
-		"/Users/zippo/Dropbox/Kaustik/1 Personal/Kick off - Konferens/Sankt Jörgen 24:1 2014/cs_anteckningar.asc",
-		"/Users/zippo/Sites/aiai/aiai/php/Controllers/Tidrapport_Controller.class.php",
-		"/Users/zippo/Documents/linux/ssl.txt"
+		"/Users/zippo/Downloads/aiai vs symfony.php"
 	],
 	"find":
 	{
@@ -210,6 +277,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"message_size_limit\nmessage_size_limit = 20480000\nsudo postconf | grep message_size_limit\n\nmessage_size_limit = 10240000\nchristian@sjostrom:~$ \n",
+			"enr",
+			"sasl",
+			"sudo",
+			"drop",
+			"spam",
+			"ssl",
 			"<payTypeId>15",
 			"1163",
 			"gatling",
@@ -260,7 +334,6 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
@@ -268,15 +341,149 @@
 					"file": "/Users/zippo/git/kungekasen-ansible/site.yml",
 					"settings":
 					{
-						"buffer_size": 2503,
+						"buffer_size": 2919,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2101,
-								2101
+								2856,
+								2896
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/zippo/git/kungekasen-ansible/README.md",
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/sys/termios.h",
+					"settings":
+					{
+						"buffer_size": 13882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/zippo/git/scripts/checkssl.php",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"settings":
+					{
+						"buffer_size": 109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/zippo/git/kungekasen-ansible/tasks/mail.yaml",
+					"settings":
+					{
+						"buffer_size": 2360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1752,
+								1752
 							]
 						],
 						"settings":
@@ -286,7 +493,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 508.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 2087,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2087,
+								2087
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"tab_width": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/zippo/git/kungekasen-ansible/galaxy-roles/Stouts.postfix/handlers/main.yml",
+					"settings":
+					{
+						"buffer_size": 304,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -339,6 +602,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"configy",
+				"galaxy-roles/Stouts.postfix/tasks/configure.yml"
+			],
 			[
 				"run",
 				"run-ansible.sh"
