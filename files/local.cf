@@ -16,3 +16,4 @@ whitelist_from *@unikum.net
 
 blacklist_from *@e.disneyconsumerproductsinteractive.com
 blacklist_from *disney*
+blacklist_from *@coolycash.com
