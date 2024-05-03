@@ -5,7 +5,7 @@
   tasks:
     - locale_gen: name=sv_SE.UTF-8 state=present
     - name: Set timezone variables
-      copy: content='CET\n'
+      copy: content='Europe/Stockholm\n'
             dest=/etc/timezone
             owner=root
             group=root
@@ -73,6 +73,7 @@
     - filesystems_ro_rootfs_enable: false
     - courier_esmtpd_enable: false
     - courier_home_mailbox: Maildir/
+    - courier_imap_pidfile: /run/courier/imapd.pid
     - postfix_myhostname: kungekasen.se
     - postfix_mydestination: $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
     - postfix_inet_interfaces: all
@@ -81,6 +82,6 @@
     - postfix_smtp_sasl_user: "christian"
   roles:
     #https://github.com/goetzk/ansible-courier  
-    - { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true }
+    #- { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true, }
     #https://github.com/Stouts/Stouts.postfix
-    - Stouts.postfix
+    #- Stouts.postfix
