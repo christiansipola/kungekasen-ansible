@@ -4,15 +4,9 @@
   become_method: sudo
   tasks:
     - locale_gen: name=sv_SE.UTF-8 state=present
-    - name: Set timezone variables
-      copy: content='Europe/Stockholm\n'
-            dest=/etc/timezone
-            owner=root
-            group=root
-            mode=0644
-            backup=yes
-      notify:
-        - update timezone
+    - name: Set timezone
+      timezone:
+        name: Europe/Stockholm
     - name: install packages
       apt: name={{ item}} update_cache=yes state=latest
       with_items:
