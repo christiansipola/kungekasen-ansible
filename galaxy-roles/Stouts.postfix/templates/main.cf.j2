@@ -14,8 +14,8 @@ readme_directory = no
 # TLS parameters
 {% if postfix_smtpd_use_tls %}
 smtpd_use_tls=yes
-smtpd_tls_cert_file=/etc/letsencrypt/live/kungekasen.se/fullchain.pem
-smtpd_tls_key_file=/etc/letsencrypt/live/kungekasen.se/privkey.pem
+smtpd_tls_cert_file={{ postfix_tls_cert_file }}
+smtpd_tls_key_file={{ postfix_tls_key_file }}
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 {% endif %}
@@ -41,23 +41,14 @@ local_recipient_maps = {{ postfix_local_recipient_map }}
 {% endif %}
 
 {% if postfix_smtp_sasl_auth_enable %}
-smtpd_sasl_auth_enable = yes
-#smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-smtp_sasl_security_options = noanonymous
-smtpd_sasl_local_domain = $myhostname
-smtpd_sasl_path = smtpd
-# otherwise not sending to mailservers without tls
-smtpd_tls_security_level = may 
-smtp_tls_CAfile = {{ postfix_smtp_tls_cafile }}
-smtpd_tls_loglevel = 2
-## not working yet in mail os x
-#smtpd_tls_auth_only = yes
-smtpd_tls_received_header = yes
-smtpd_tls_session_cache_timeout = 3600s
-smtpd_recipient_restrictions =
-   permit_sasl_authenticated,
-   permit_mynetworks,
-   reject_unauth_destination
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options =
+{% if postfix_smtp_use_tls %}
+smtp_use_tls = yes
+smtp_tls_security_level = encrypt
+smtp_tls_CApath = {{postfix_smtp_tls_CApath}} 
+{% endif %}
 {% endif %}
 
 {% if postfix_relayhost %}
@@ -76,8 +67,16 @@ mydomain = {{postfix_mydomain}}
 mailbox_command = /usr/bin/procmail -a "$EXTENSION"
 {% endif %}
 
-home_mailbox = Maildir/
-#virtual_transport = maildrop
-mailbox_command = /usr/bin/maildrop
-maildrop_destination_recipient_limit = 1
+{% if postfix_dkim %}
+milter_protocol = 2
+milter_default_action = accept
+smtpd_milters = inet:localhost:12301
+non_smtpd_milters = inet:localhost:12301
+{% endif %}
 
+# Queue
+bounce_queue_lifetime = {{bounce_queue_lifetime}}
+maximal_queue_lifetime = {{maximal_queue_lifetime}}
+maximal_backoff_time = {{maximal_backoff_time}}
+minimal_backoff_time = {{minimal_backoff_time}}
+queue_run_delay = {{queue_run_delay}}

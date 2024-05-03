@@ -6,6 +6,12 @@
 - include: install.yum.yml
   when: ansible_os_family == 'RedHat'
 
+- include: sslcert.yml
+  when: postfix_tls_generate
+
+- include: opendkim.yml
+  when: postfix_dkim
+
 - include: configure.yml
 
 - name: Ensure Postfix is started
