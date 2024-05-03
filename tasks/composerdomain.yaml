@@ -5,13 +5,17 @@
        dest=/var/www/{{ name }}
        key_file=/home/christian/.ssh/id_rsa
 - name: www permissions
-  file: path=/var/www/{{ name }}
-        owner=www-data
-        group=www-data
-        recurse=yes
+  file:
+    path: /var/www/{{ name }}
+    owner: www-data
+    group: www-data
+    recurse: true
+
 - name: run composer
-  composer: command=install working_dir=/var/www/{{ name }}
-  sudo_user: www-data
+  composer:
+    command: install
+    working_dir: /var/www/{{ name }}
+    sudo_user: www-data
 - name: create virtual host
   copy: src=virtualhosts/{{ domain }}.conf
         dest=/etc/apache2/sites-available/

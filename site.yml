@@ -1,5 +1,5 @@
 ---
-- hosts: kungekasen
+- hosts: all
   become: yes
   become_method: sudo
   tasks:
@@ -22,7 +22,7 @@
         - spamassassin
         - spamc
         - maildrop
-    - include: tasks/mail.yaml
+    - import_tasks: tasks/mail.yaml
     - name: enabled apache2 mods
       apache2_module: name={{ item }} state=present
       notify:
@@ -41,12 +41,14 @@
       args:
         creates: /usr/local/bin/composer
       become_user: root 
-    - include: tasks/composerdomain.yaml
-               domain=brollop.kungekasen.se
-               name=kungekasen
-    - include: tasks/composerdomain.yaml
-               domain=podcast.kungekasen.se
-               name=podcastFeed
+    - import_tasks: tasks/composerdomain.yaml
+      vars:
+        domain: brollop.kungekasen.se
+        name: kungekasen
+    - import_tasks: tasks/composerdomain.yaml
+      vars:
+        domain: podcast.kungekasen.se
+        name: podcastFeed
     ## monday 1, tuesday 2, wednesday 3 thursday 4, friday 5, saturday 6, sunday 0
     - cron: name="p3popular part 2 måndag till torsdag" minute="0" hour="7" weekday="2-5"
             user=www-data
@@ -54,9 +56,10 @@
     - cron: name="clear tmp every night for older than 14 days" minute="0" hour="2"
             user=root
             job="find /tmp -ctime +14 -exec rm -rf {} +"
-    - include: tasks/virtualhost.yaml
-               domain=kungekasen.se
-               name=kungekasen.se
+    - import_tasks: tasks/virtualhost.yaml
+      vars:
+        domain: kungekasen.se
+        name: kungekasen.se
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
@@ -81,4 +84,3 @@
     - { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true }
     #https://github.com/Stouts/Stouts.postfix
     - Stouts.postfix
-
