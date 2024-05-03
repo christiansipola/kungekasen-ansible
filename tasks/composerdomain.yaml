@@ -1,6 +1,5 @@
 ---
 ## do not forget to add private ssh key
-# TODO some problems
 #- name: git repo
 #  git: repo=git@github.com:christiansipola/{{ name }}.git
 #       dest=/var/www/{{ name }}
@@ -12,11 +11,11 @@
     group: www-data
     recurse: true
 
-- name: run composer
-  composer:
-    command: install
-    working_dir: /var/www/{{ name }}
-    sudo_user: www-data
+#- name: run composer
+#  composer:
+#    command: install
+#    working_dir: /var/www/{{ name }}
+#    sudo_user: www-data
 - name: create virtual host
   copy: src=virtualhosts/{{ domain }}.conf
         dest=/etc/apache2/sites-available/
