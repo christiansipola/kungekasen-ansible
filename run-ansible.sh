@@ -1,3 +1,4 @@
 #!/bin/bash
-ansible-playbook site.yml --ask-sudo-pass
-say "allt klart"
+## --check is dry run
+## --diff shows diff
+ansible-playbook -i inventory.ini site.yml -K
