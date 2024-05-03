@@ -1,9 +1,10 @@
 ---
-## do not forget to add private ssh key 
-- name: git repo
-  git: repo=git@github.com:christiansipola/{{ name }}.git 
-       dest=/var/www/{{ name }}
-       key_file=/home/christian/.ssh/id_rsa
+## do not forget to add private ssh key
+# TODO some problems
+#- name: git repo
+#  git: repo=git@github.com:christiansipola/{{ name }}.git
+#       dest=/var/www/{{ name }}
+#       key_file=/home/christian/.ssh/id_rsa
 - name: www permissions
   file:
     path: /var/www/{{ name }}
