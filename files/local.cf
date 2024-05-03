@@ -13,6 +13,7 @@ whitelist_from *@facebookmail.com
 whitelist_from *@email.hellyhansen.com
 whitelist_from *@bokningdirekt.se
 whitelist_from *@unikum.net
+whitelist_from *@frame.work
 
 blacklist_from *@e.disneyconsumerproductsinteractive.com
 blacklist_from *disney*
