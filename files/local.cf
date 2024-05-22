@@ -17,6 +17,7 @@ whitelist_from *@frame.work
 whitelist_from *@norrgavel.se
 whitelist_from *@mail.disneyplus.com
 whitelist_from egnahem.helenevik@gmail.com
+whitelist_from *@molndalsposten.se
 
 blacklist_from *@e.disneyconsumerproductsinteractive.com
 #blacklist_from *disney*
