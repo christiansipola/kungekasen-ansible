@@ -19,6 +19,9 @@ whitelist_from *@mail.disneyplus.com
 whitelist_from egnahem.helenevik@gmail.com
 whitelist_from *@molndalsposten.se
 whitelist_from *@magasinetfilter.se
+# volvo mobility
+whitelist_from *@info.m.co
+whitelist_from *@volvocars.com
 
 blacklist_from *@e.disneyconsumerproductsinteractive.com
 #blacklist_from *disney*
