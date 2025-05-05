@@ -11,7 +11,8 @@ ansible-playbook -i inventory.ini site.yml --check
 
 # update with
 ## it seems that core 2.13 /6.X removed support for includes: . noThis feature will be removed in version 2.16
-  sudo pip install ansible==5.10.0
+ in venv:
+  pip install ansible==5.10.0
   Successfully installed ansible-5.10.0 ansible-core-2.12.10 resolvelib-0.5.4
 
   ansible-galaxy install goetzk.courier
@@ -40,3 +41,13 @@ ubuntu 22.04. python 3.10. ansible 9.5.1
 upgrade to 18.04 on 2024-05-03
 installed new versions for all conf except
 /etc/sysctl.conf
+
+2025-04-30
+## use a version of python between 3.8 and 3.10
+cd git/kungekasen-ansible/
+rm -rf .venv
+pyenv install 3.10.4
+pyenv virtualenv 3.10.4 ansible
+pyenv virtualenv 3.10.4 ansible
+pyenv activate ansible
+pip install ansible==5.10.0

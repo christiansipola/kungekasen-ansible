@@ -68,6 +68,7 @@
     - courier_esmtpd_enable: false
     - courier_home_mailbox: Maildir/
     - courier_imap_pidfile: /run/courier/imapd.pid
+    - courier_imap_ssl_pidfile: /run/courier/imapd-ssl.pid
     - postfix_myhostname: kungekasen.se
     - postfix_mydestination: $myhostname, localhost.$mydomain, localhost, sipola.se, kungekasen.com
     - postfix_inet_interfaces: all
@@ -76,6 +77,6 @@
     - postfix_smtp_sasl_user: "christian"
   roles:
     #https://github.com/goetzk/ansible-courier  
-    #- { role: goetzk.courier, courier_esmtpd_enable: false, courier_imap_enable: true, }
+    #- { role: goetzk.courier, courier_esmtpd_enable: false}
     #https://github.com/Stouts/Stouts.postfix
     #- Stouts.postfix
